@@ -1,6 +1,3 @@
-# python -m worlds.dark_souls_3.detailed_location_descriptions \
-#     worlds/dark_souls_3/detailed_location_descriptions.py
-#
 # This script downloads the static randomizer's descriptions for each location and adds them to
 # the location documentation.
 
@@ -17,7 +14,6 @@ from .Locations import location_dictionary
 location_re = re.compile(r'^([A-Z0-9]+): (.*?)(?:$| - )')
 
 if __name__ == '__main__':
-    # TODO: update this to the main branch of the main randomizer once Archipelago support is merged
     url = 'https://raw.githubusercontent.com/yenix/SoulsRandomizers/archipelago-server/dists/Base/annotations.txt'
     response = requests.get(url)
     if response.status_code != 200:

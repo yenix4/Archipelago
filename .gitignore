@@ -12,6 +12,7 @@
 *.aptloz
 *.aptww
 *.apemerald
+*.csv
 *.pyc
 *.pyd
 *.sfc
@@ -196,3 +197,7 @@ _speedups.html
 .LSOverride
 Thumbs.db
 [Dd]esktop.ini
+/worlds/sekiro/locations_generated.py
+/worlds/sekiro/generate_location_data.py
+/worlds/sekiro/items_generated.py
+/worlds/sekiro/generate_item_data.py
