@@ -66,7 +66,7 @@ class DeathLink(Choice):
 
     - **Off:** Death link is disabled. (The default.)
     - **Full Death:** Death link triggers only for full deaths. (No resurrection available or falling death).
-    - **Any Death:** Death link triggers anytime you hit 0 HP. (Usage can lead to angry cooperators.)
+    - **Any Death:** Death link triggers anytime you hit 0 HP. (Warning: Usage can lead to angry cooperators!)
     """
     display_name = "Death Link"
     option_off = 0

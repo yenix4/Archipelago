@@ -21,7 +21,7 @@ Hopefully coming soon!
 
 First, download the client for your OS from the link above 
 (`randomizerAP_*_*.zip`). Extract the contained randomizerAP folder into your 
-game directory.
+Sekiro game directory.
 
 This randomizer _only_ supports the latest version of _Sekiro_, 1.06. This
 is the latest version, so you don't need to do any downpatching! However, if
@@ -33,7 +33,7 @@ randomizer version.
 ### Client Operation
 
 1. Whenever you want to connect to a multiworld, run
-   `randomizerAP\SekiroAPClient.exe`.
+   `randomizerAP\SekiroAPClient.exe` from your game directory.
 
 2. Put in your Archipelago room address (usually something like
    `archipelago.gg:12345`), your player name (also known as your "slot name"), 
@@ -62,7 +62,7 @@ The *Sekiro* Archipelago randomizer supports running on Linux under Proton or
 even Steam Deck. There are a few things to keep in mind:
 
 * Because `SekiroAPClient.exe` relies on the .NET runtime, the Linux release is
-  shipped with .NET Runtime 10.
+  shipped with .NET Runtime 10 already included for your convenience.
 
 * Follow the client operation guide until the end of step 4. You will notice the
   `Launch Game` button is missing. Instead, follow the instructions below:
@@ -114,7 +114,7 @@ Potentially, the client may not function for you. This is usually caused by some
 issue communicating with Steam to launch it properly. If this is happening to 
 you, make sure:
 
-* You have Sekiro 1.06 installed. This is the latest patch as of July 2026.
+* You have Sekiro 1.06 installed. This is the latest patch as of August 2026.
 
 * Steam is not running in administrator mode. To fix this, right-click
   `steam.exe` (by default this is in `C:\Program Files\Steam`), select
