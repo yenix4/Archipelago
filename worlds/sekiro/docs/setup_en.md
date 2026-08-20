@@ -15,7 +15,11 @@ https://github.com/yenix4/ArchipelagoSekiro/releases
 
 ## Optional Software
 
-Hopefully coming soon!
+[Poptracker] (still early in development and not complete):
+
+[Poptracker]: 
+https://github.com/vonTungsten/Sekiro-Poptracker/releases
+
 
 ## Setting Up
 

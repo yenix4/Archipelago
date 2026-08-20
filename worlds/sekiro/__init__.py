@@ -508,11 +508,20 @@ class SekiroWorld(World):
                 and state.has("Lotus of the Palace", self.player)
                 and state.has("Mortal Blade", self.player)
                 and self._can_get(state, "AC: Immortal Severance Text - Kuro")
-                and self._can_go_to(state, "Poison Pool")
+                and ( self._can_go_to(state, "Poison Pool") or
+                      self._can_go_to(state, "Senpou Temple, Mt. Kongo") or
+                      self._can_go_to(state, "Sunken Valley") or
+                      self._can_go_to(state, "Hirata Estate (Young Lord's Bell Charm)"))
         ))
 
-        # Indirect condition for interior ministry to be able to trigger the invasion.
+        # Indirect conditions for Interior ministry invasion trigger.
         self.multiworld.register_indirect_condition(self.get_region("Poison Pool"),
+                                                    self.get_entrance("Go To Ashina Castle (Interior Ministry)"))
+        self.multiworld.register_indirect_condition(self.get_region("Senpou Temple, Mt. Kongo"),
+                                                    self.get_entrance("Go To Ashina Castle (Interior Ministry)"))
+        self.multiworld.register_indirect_condition(self.get_region("Sunken Valley"),
+                                                    self.get_entrance("Go To Ashina Castle (Interior Ministry)"))
+        self.multiworld.register_indirect_condition(self.get_region("Hirata Estate (Young Lord's Bell Charm)"),
                                                     self.get_entrance("Go To Ashina Castle (Interior Ministry)"))
 
 
@@ -568,7 +577,7 @@ class SekiroWorld(World):
                     self._can_get(state, "AO: Prayer Bead - before lookout building, miniboss drop")
             ))
         # Make the Headless location require AC access, just to make sure this doesn't lock early with no confetti.
-        if not self.options.randomize_headless or not self.options.randomize_enemies:
+        if not self.options.randomize_headless or not self.options.enemy_randomizer:
             self._add_location_rule([
                 "AO: Ako's Spiritfall - headless cave, miniboss drop",
             ], lambda state: self._can_get(state, "AC: Memory: Genichiro"))
@@ -1277,8 +1286,11 @@ class SekiroWorld(World):
                 "remove_headless_slow_walk": self.options.remove_headless_slow_walk.value,
                 "randomize_skills_and_prosthetics": self.options.randomize_skills_and_prosthetics.value,
                 "replace_esoteric_texts_with_skills": self.options.replace_esoteric_texts_with_skills.value,
-                "randomize_enemies": self.options.randomize_enemies.value,
+                "enemy_randomizer": self.options.enemy_randomizer.value,
+                "randomize_bosses": self.options.randomize_bosses.value,
+                "randomize_minibosses": self.options.randomize_minibosses.value,
                 "randomize_headless": self.options.randomize_headless.value,
+                "randomize_regular_enemies": self.options.randomize_regular_enemies.value,
                 "similar_boss_phases": self.options.similar_boss_phases.value,
                 "balanced_endgame_boss_phases": self.options.balanced_endgame_boss_phases.value,
                 "simple_early_minibosses": self.options.simple_early_minibosses.value,
@@ -1305,7 +1317,7 @@ class SekiroWorld(World):
             # This is checked by the static randomizer, which will surface an
             # error to the user if its version doesn't fall into the allowed
             # range.
-            "versions": ">=3.0.0-beta.24 <3.1.0",
+            "versions": ">=1.0.1 <1.1.0",
         }
 
         return slot_data

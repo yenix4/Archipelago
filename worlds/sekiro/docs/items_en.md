@@ -12,7 +12,7 @@ which can be used in YAML options like `local_items` to refer to many items at
 once:
 
 * **Progression:** Items that unlock locations.
-* **Memories** Items dropped by major bosses to increase Attack Power.
+* **Memories:** Items dropped by major bosses to increase Attack Power.
 * **Prayer Beads:** Items that increase Vitality and Posture.
 * **Healing:** Items that increase Healing Gourd charges.
 * **Esoteric Texts:** Items that unlock skill trees.

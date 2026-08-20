@@ -10,7 +10,7 @@ from Options import (
     OptionGroup,
     PerGameCommonOptions,
     Toggle,
-    Visibility,
+    StartInventoryPool
 )
 
 ## Game Options
@@ -96,17 +96,44 @@ class ReplaceEsotericTextswithSkills(Toggle):
 
 ### Enemies
 
-class RandomizeEnemiesOption(DefaultOnToggle):
-    """Randomize enemy and boss placements."""
-    display_name = "Randomize Enemies"
+class EnemyRandomizer(DefaultOnToggle):
+    """Toggle the Enemy Randomizer on or off.
+
+    This is required to use any of the options in the Enemies Option block!!
+    """
+    display_name = "Enemy Randomizer"
+
+
+class RandomizeBossesOption(DefaultOnToggle):
+    """Randomize all bosses between themselves.
+
+    This is ignored unless the option "Enemy Randomizer" is enabled.
+    """
+    display_name = "Randomize bosses"
+
+
+class RandomizeMinibossesOption(DefaultOnToggle):
+    """Randomize all minibosses between themselves.
+
+    This is ignored unless the option "Enemy Randomizer" is enabled.
+    """
+    display_name = "Randomize minibosses"
 
 
 class RandomizeHeadlessOption(Toggle):
     """Include headless in the randomizer pool for minibosses (non-underwater)
 
-    This is ignored unless enemies are randomized.
+    This is ignored unless the option "Enemy Randomizer" is enabled.
     """
     display_name = "Randomize Headless"
+
+
+class RandomizeRegularEnemiesOption(DefaultOnToggle):
+    """Randomize all other enemy placements.
+
+    This is ignored unless the option "Enemy Randomizer" is enabled.
+    """
+    display_name = "Randomize regular enemies"
 
 
 class SimilarBossPhases(DefaultOnToggle):
@@ -114,7 +141,7 @@ class SimilarBossPhases(DefaultOnToggle):
 
      This setting will try to keep a similar number of phases compared to the replaced vanilla bosses.
 
-     This is ignored unless enemies are randomized.
+     This is ignored unless the option "Enemy Randomizer" is enabled.
      """
     display_name = "Similar Number of Boss Phases"
 
@@ -122,7 +149,7 @@ class SimilarBossPhases(DefaultOnToggle):
 class BalancedEndgameBossPhases(DefaultOnToggle):
     """Prevent early bosses to be seriously unfun by considering late game boss phases as longer than earlier ones.
 
-    This is ignored unless enemies are randomized.
+    This is ignored unless the option "Enemy Randomizer" is enabled.
     """
     display_name = "Smoothed Boss Phases"
 
@@ -135,7 +162,7 @@ class SimpleEarlyMinibosses(DefaultOnToggle):
     This is in case you get an early blocking Shichimen (or Headless if they are enabled).
     After using those, your fate is up to luck (or skill).
 
-    This is ignored unless enemies are randomized.
+    This is ignored unless the option "Enemy Randomizer" is enabled.
     """
     display_name = "Simple Early Minibosses"
 
@@ -146,7 +173,7 @@ class ScaleEnemiesOption(DefaultOnToggle):
     Disabling this will tend to make the early game much more difficult and the late game much
     easier.
 
-    This is ignored unless enemies are randomized.
+    This is ignored unless the option "Enemy Randomizer" is enabled.
     """
     display_name = "Scale Enemies"
 
@@ -165,6 +192,8 @@ class RandomEnemyPresetOption(OptionDict):
 
     Full presets such as Ashina Zoo or Nightmare Mode have been built into the client for ease of use. Simply use the
     `Randomizer options` to select your desired preset before first connecting to a multiworld.
+
+    This is ignored unless the option "Enemy Randomizer" is enabled.
     """
     display_name = "Random Enemy Preset"
     supports_weighting = False
@@ -232,6 +261,7 @@ class MissableLocationBehaviorOption(Choice):
 
 @dataclass
 class SekiroOptions(PerGameCommonOptions):
+    start_inventory_from_pool: StartInventoryPool
     # Game Options
     goal_option: GoalOption
     quick_hirata: QuickHirata
@@ -245,8 +275,11 @@ class SekiroOptions(PerGameCommonOptions):
     replace_esoteric_texts_with_skills: ReplaceEsotericTextswithSkills
 
     # Enemies
-    randomize_enemies: RandomizeEnemiesOption
+    enemy_randomizer: EnemyRandomizer
+    randomize_bosses: RandomizeBossesOption
+    randomize_minibosses: RandomizeMinibossesOption
     randomize_headless: RandomizeHeadlessOption
+    randomize_regular_enemies: RandomizeRegularEnemiesOption
     similar_boss_phases: SimilarBossPhases
     balanced_endgame_boss_phases: BalancedEndgameBossPhases
     simple_early_minibosses: SimpleEarlyMinibosses
@@ -266,8 +299,11 @@ option_groups = [
         ReplaceEsotericTextswithSkills,
     ]),
     OptionGroup("Enemies", [
-        RandomizeEnemiesOption,
+        EnemyRandomizer,
+        RandomizeBossesOption,
+        RandomizeMinibossesOption,
         RandomizeHeadlessOption,
+        RandomizeRegularEnemiesOption,
         SimilarBossPhases,
         BalancedEndgameBossPhases,
         SimpleEarlyMinibosses,
