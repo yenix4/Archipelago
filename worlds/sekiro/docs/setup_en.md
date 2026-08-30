@@ -15,7 +15,7 @@ https://github.com/yenix4/ArchipelagoSekiro/releases
 
 ## Optional Software
 
-[Poptracker] (still early in development and not complete):
+[Poptracker] (still early in development and not complete)
 
 [Poptracker]: 
 https://github.com/vonTungsten/Sekiro-Poptracker/releases
@@ -25,7 +25,8 @@ https://github.com/vonTungsten/Sekiro-Poptracker/releases
 
 First, download the client for your OS from the link above 
 (`randomizerAP_*_*.zip`). Extract the contained randomizerAP folder into your 
-Sekiro game directory.
+Sekiro game directory. **Do not rename this folder or place it anywhere else, 
+otherwise the mod will not work.**
 
 This randomizer _only_ supports the latest version of _Sekiro_, 1.06. This
 is the latest version, so you don't need to do any downpatching! However, if

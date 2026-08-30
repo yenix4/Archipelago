@@ -660,7 +660,7 @@ static _Sekiro_ randomizer].
 <tr><td>AC: Mibu Possession Balloon - lake, bridge</td><td>On the other end of the bridge leading to the Great Serpent Shrine</td></tr>
 <tr><td>AC: Mibu Possession Balloon - lake, under bridge</td><td>On the surface of the rear moat, underneath the bridge leading toward the Great Serpent Shrine</td></tr>
 <tr><td>AC: Mibu Possession Balloon - underwater, lake, near bridge</td><td>Underwater past and to the right of the bridge leading to the Great Serpent Shrine</td></tr>
-<tr><td>AC: Mushin Esoteric Text - Tengu after unlocking special technique</td><td>Given by Isshin or Emma after learning Shadowrush, Living Force, Ashina Cross, and High Monk.</td></tr>
+<tr><td>AC: Mushin Esoteric Text - Tengu after unlocking special technique</td><td>Given by Isshin or Emma after learning Shadowrush, Living Force, Ashina Cross, or High Monk.</td></tr>
 <tr><td>AC: Nightjar Beacon Memo - Fujioka</td><td>Given by Fujioka the Info Broker after completing his request in Ashina Castle</td></tr>
 <tr><td>AC: Okami&#x27;s Ancient Text - Kuro</td><td>Given by Kuro after he recruits you to achieve Immortal Severence and you show him Lotus of the Palace, describing Ashina Depths</td></tr>
 <tr><td>AC: Page&#x27;s Diary - Kuro</td><td>Given by Kuro after he recruits you to achieve Immortal Severence and you show him Lotus of the Palace, to ask Emma about the Mortal Blade</td></tr>
